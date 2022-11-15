@@ -9,22 +9,25 @@
 .form-control label, .form-control input {
     display: block;
     width: 100%;
+    margin-bottom: 0.5rem;
 }
 .form-control input {
-    border: 1px solid #c3cd58;
+    border: 1px solid #368564;
     font: inherit;
     border-radius: 4px;
+    padding: 0.5rem;
 }
 button {
     font: inherit;
-    border: 1px solid #c3cd58;
-    color: #c3cd58;
-    background-color: white;
+    border: none;
+    color: #ffffff;
+    background-color: #295d4a;
     border-radius: 3px;
     cursor: pointer;
+    padding: 0.5rem;
 }
 button:hover,
 button:active {
-    background-color: #c3cd58;
+    background-color: #368564;
     color: white;
 }
