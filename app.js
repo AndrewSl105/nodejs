@@ -4,9 +4,9 @@ const path = require('path')
 
 const app = express(bodyParser);
 
-app.engine('pug', require('pug').__express)
+app.engine('ejs', require('ejs').__express);
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const rootDir = require('./util/path')
@@ -21,7 +21,9 @@ app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).render('404')
+    res.status(404).render('404', {
+        pageTitle: 'Not found'
+    })
 })
 
 app.listen(5000)
