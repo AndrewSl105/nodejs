@@ -9,7 +9,7 @@ app.engine('ejs', require('ejs').__express);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-const rootDir = require('./util/path')
+const errorController = require('./controlers/error')
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop')
@@ -20,10 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    res.status(404).render('404', {
-        pageTitle: 'Not found'
-    })
-})
+app.use(errorController.get404)
 
 app.listen(5000)
