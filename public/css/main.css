@@ -36,3 +36,7 @@ body {
 main {
     padding: 1rem;
 }
+
+.centered {
+    text-align: center;
+}
